@@ -1,6 +1,7 @@
 import 'package:bharat_help_mission/base_widgets/expanded_flat_button.dart';
 import 'package:bharat_help_mission/common/helper_functions.dart';
 import 'package:bharat_help_mission/common/strings_value.dart';
+import 'package:bharat_help_mission/screens/drawer/drawer.dart';
 import 'package:bharat_help_mission/screens/home/fundraise_form/step_1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -27,11 +28,18 @@ class _DashboardScreenState extends State<DashboardScreen> {
         elevation: 0,
         backgroundColor: whiteColor,
         foregroundColor: blackColor,
-        leading:
-            IconButton(onPressed: () {}, icon: SvgPicture.asset(drawer_icon)),
+        leading: Builder(
+            builder: (context) => IconButton(
+                onPressed: () => Scaffold.of(context).openDrawer(),
+                icon: SvgPicture.asset(drawer_icon))),
         actions: [
           IconButton(onPressed: () {}, icon: SvgPicture.asset(bell_icon)),
         ],
+      ),
+      drawer: const Drawer(
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.horizontal(right: Radius.circular(20))),
+        child: CustomDrawer(),
       ),
       body: SafeArea(
           child: Padding(

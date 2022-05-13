@@ -130,7 +130,9 @@ class _FundraiseFormStep3State extends State<FundraiseFormStep3> {
                         ),
                         putSpace(20),
                         ExpandedTextField(
-                          hint: "Hospital name",
+                          hint: _selectedTrust == "Education"
+                              ? "College name"
+                              : "Hospital name",
                           showBorder: true,
                         ),
                         putSpace(20),

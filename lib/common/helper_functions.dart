@@ -17,9 +17,11 @@ getPop(BuildContext context) => Navigator.of(context).pop();
 
 unfocus(BuildContext context) => FocusScope.of(context).unfocus();
 
-AppBar popAppBar(BuildContext context) {
+AppBar popAppBar(
+  BuildContext context,
+) {
   return AppBar(
-    backgroundColor: whiteColor,
+    backgroundColor: Colors.transparent,
     foregroundColor: blackColor,
     elevation: 0,
     leading: IconButton(

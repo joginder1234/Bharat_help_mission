@@ -39,6 +39,9 @@ dependencies:
   carousel_slider: ^4.1.1
   pin_input_text_field: ^4.1.2
   dotted_border: ^2.0.0+2
+  flutter_share: ^2.0.0
+  share_plus: ^4.0.4
+  flutter_rating_bar: ^4.0.0
 
 dev_dependencies:
   flutter_test:
