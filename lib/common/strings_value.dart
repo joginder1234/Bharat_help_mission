@@ -13,6 +13,7 @@ const fundraise_clip_image = "assets/graphic_svg/fundraise_clip_img.png";
 const fundraise_image = "assets/graphic_svg/fundraise_img.svg";
 const donate_clip_image = "assets/graphic_svg/donate_clip_img.png";
 const donate_image = "assets/graphic_svg/donate_img.svg";
+const clap_image = "assets/graphic_svg/clap_img.png";
 
 /// svg icon paths
 const email_icon = "assets/icons/envelop_icon.svg";
@@ -23,6 +24,11 @@ const phone_outline_icon = "assets/icons/phone_outline_icon.svg";
 const user_outline_icon = "assets/icons/user_outline_icon.svg";
 const bell_icon = "assets/icons/notification_icon.svg";
 const drawer_icon = "assets/icons/drawer_icon.svg";
+const calender_icon = "assets/icons/calender_outline_icon.svg";
+const upload_icon = "assets/icons/upload_icon.svg";
+
+/// Other images path link
+const profilePic = "assets/others/profile.jpg";
 
 /// Colors Theme
 const primaryColor = Color(0xff0076AB);
@@ -35,3 +41,15 @@ const blackColor = Color(0xff000000);
 /// Common Used List or variables
 
 List<String> trustCatList = ["Medical", "Education", "Memorial", "Other"];
+List<String> relationList = [
+  "Mother",
+  "Father",
+  "Son",
+  "Daughter",
+  "Wife",
+  "Husband",
+  "Uncle",
+  "Aunty"
+];
+
+List<String> currencyList = ["INR", "USD", "EURO"];

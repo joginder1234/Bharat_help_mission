@@ -38,6 +38,7 @@ dependencies:
   google_fonts: ^2.3.2
   carousel_slider: ^4.1.1
   pin_input_text_field: ^4.1.2
+  dotted_border: ^2.0.0+2
 
 dev_dependencies:
   flutter_test:
@@ -65,6 +66,7 @@ flutter:
   assets:
     - assets/graphic_svg/
     - assets/icons/
+    - assets/others/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

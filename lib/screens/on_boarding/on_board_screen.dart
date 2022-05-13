@@ -26,8 +26,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
-    print(getWidth(context));
-    print(getHeight(context));
     return Scaffold(
       body: SafeArea(
           child: ListView(
@@ -41,7 +39,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   autoPlay: false,
                   enlargeCenterPage: false,
                   viewportFraction: 1.0,
-                  aspectRatio: getHeight(context) < 650 ? 0.8 : 0.65,
+                  aspectRatio: getHeight(context) < 630
+                      ? 0.8
+                      : getHeight(context) > 720
+                          ? 0.8
+                          : 0.65,
                   initialPage: 0,
                   onPageChanged: (v, _) => setState(() => _slideIndex = v)),
             ),

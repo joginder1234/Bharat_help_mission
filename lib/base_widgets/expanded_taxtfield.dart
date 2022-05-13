@@ -10,6 +10,9 @@ class ExpandedTextField extends StatelessWidget {
   bool showPrefix;
   Color filledColor;
   bool showBorder;
+  bool readonly;
+  int maxline;
+  Function? ontap;
   ExpandedTextField(
       {Key? key,
       this.hint = '',
@@ -17,6 +20,9 @@ class ExpandedTextField extends StatelessWidget {
       this.showPrefix = false,
       this.filledColor = whiteColor,
       this.showBorder = false,
+      this.readonly = false,
+      this.ontap,
+      this.maxline = 1,
       this.controller})
       : super(key: key);
 
@@ -30,16 +36,23 @@ class ExpandedTextField extends StatelessWidget {
                   ? blackColor.withOpacity(0.2)
                   : Colors.transparent)),
       child: TextField(
+        maxLines: maxline,
+        onTap: () => ontap != null ? ontap!() : null,
+        readOnly: readonly,
         controller: controller,
         decoration: InputDecoration(
             fillColor: filledColor,
             filled: true,
             prefixIcon: showPrefix
                 ? IconButton(
-                    onPressed: null, icon: SvgPicture.asset(prefixIcon))
-                : const SizedBox(),
-            contentPadding:
-                const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                    onPressed: null,
+                    icon: SvgPicture.asset(
+                      prefixIcon,
+                      color: primaryColor,
+                    ))
+                : null,
+            contentPadding: EdgeInsets.symmetric(
+                horizontal: 15, vertical: maxline > 1 ? 15 : 5),
             hintText: hint,
             hintStyle: Theme.of(context).textTheme.headline3,
             border: OutlineInputBorder(

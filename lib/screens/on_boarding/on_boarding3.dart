@@ -20,12 +20,12 @@ class _OnBoarding3State extends State<OnBoarding3> {
         mainAxisSize: MainAxisSize.min,
         children: [
           SizedBox(
-              height: getHeight(context) * 0.45,
+              height: (getHeight(context) * 0.45).clamp(150, 300),
               child: SvgPicture.asset(
                 on_board_3,
                 fit: BoxFit.fitWidth,
               )),
-          putSpace(getHeight(context) * 0.05),
+          putSpace((getHeight(context) * 0.05).clamp(30, 45)),
           Text(
             "Our Services is most",
             style: theme.headline1,

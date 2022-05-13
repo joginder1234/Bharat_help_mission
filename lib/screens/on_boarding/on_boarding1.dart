@@ -14,18 +14,19 @@ class _OnBoarding1State extends State<OnBoarding1> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
+    print("space :: ${getHeight(context) * 0.45}");
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
           SizedBox(
-              height: getHeight(context) * 0.45,
+              height: (getHeight(context) * 0.45).clamp(150, 300),
               child: SvgPicture.asset(
                 on_board_1,
                 fit: BoxFit.fitWidth,
               )),
-          putSpace(getHeight(context) * 0.05),
+          putSpace((getHeight(context) * 0.05).clamp(30, 45)),
           Text(
             "Our Services is most",
             style: theme.headline1,
