@@ -14,28 +14,29 @@ class _OnBoarding3State extends State<OnBoarding3> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
-    return Padding(
-      padding: const EdgeInsets.all(20.0),
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-                height: getHeight(context) * 0.4,
-                child: SvgPicture.asset(on_board_3)),
-            putSpace(40),
-            Text(
-              "Our Services is most",
-              style: theme.headline1,
-            ),
-            putSpace(15),
-            Text(
-              "simply dummy text of the printing and"
-              " typesetting industry. Lorem Ipsum industry. Lorem Ipsum.",
-              style: theme.headline3,
-            )
-          ],
-        ),
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SizedBox(
+              height: getHeight(context) * 0.45,
+              child: SvgPicture.asset(
+                on_board_3,
+                fit: BoxFit.fitWidth,
+              )),
+          putSpace(getHeight(context) * 0.05),
+          Text(
+            "Our Services is most",
+            style: theme.headline1,
+          ),
+          putSpace(15),
+          Text(
+            "simply dummy text of the printing and"
+            " typesetting industry. Lorem Ipsum industry. Lorem Ipsum.",
+            style: theme.headline3,
+          )
+        ],
       ),
     );
   }

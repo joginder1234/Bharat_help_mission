@@ -2,6 +2,7 @@ import 'package:bharat_help_mission/base_widgets/expanded_flat_button.dart';
 import 'package:bharat_help_mission/common/helper_functions.dart';
 import 'package:bharat_help_mission/common/strings_value.dart';
 import 'package:bharat_help_mission/screens/auth/login_screen.dart';
+import 'package:bharat_help_mission/screens/auth/register_screen.dart';
 import 'package:bharat_help_mission/screens/on_boarding/on_boarding1.dart';
 import 'package:bharat_help_mission/screens/on_boarding/on_boarding2.dart';
 import 'package:bharat_help_mission/screens/on_boarding/on_boarding3.dart';
@@ -25,20 +26,25 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
+    print(getWidth(context));
+    print(getHeight(context));
     return Scaffold(
       body: SafeArea(
-          child: Column(
+          child: ListView(
+        scrollDirection: Axis.vertical,
         children: [
-          CarouselSlider(
-            items: _sliderList,
-            options: CarouselOptions(
-                height: getHeight(context) * 0.65,
-                autoPlay: false,
-                enlargeCenterPage: true,
-                viewportFraction: 0.9,
-                aspectRatio: 2.0,
-                initialPage: 2,
-                onPageChanged: (v, _) => setState(() => _slideIndex = v)),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: CarouselSlider(
+              items: _sliderList,
+              options: CarouselOptions(
+                  autoPlay: false,
+                  enlargeCenterPage: false,
+                  viewportFraction: 1.0,
+                  aspectRatio: getHeight(context) < 650 ? 0.8 : 0.65,
+                  initialPage: 0,
+                  onPageChanged: (v, _) => setState(() => _slideIndex = v)),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -58,7 +64,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       )),
             ),
           ),
-          const Spacer(),
+          putSpace(getHeight(context) * 0.08),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: ExpandedFlatButton(
@@ -71,7 +77,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: ExpandedFlatButton(
-                title: "Sign up", onPressed: () {}, showBorder: true),
+                title: "Sign up",
+                onPressed: () => gotoScreen(context, const RegisterScreen()),
+                showBorder: true),
           ),
           putSpace(10)
         ],

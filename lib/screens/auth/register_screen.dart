@@ -2,6 +2,7 @@ import 'package:bharat_help_mission/base_widgets/expanded_flat_button.dart';
 import 'package:bharat_help_mission/base_widgets/expanded_taxtfield.dart';
 import 'package:bharat_help_mission/common/helper_functions.dart';
 import 'package:bharat_help_mission/screens/auth/login_screen.dart';
+import 'package:bharat_help_mission/screens/auth/otp_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -90,7 +91,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ]))),
                     ExpandedFlatButton(
                         title: "Register",
-                        onPressed: () {},
+                        onPressed: () => gotoScreen(context, const OtpScreen()),
                         buttonColor: primaryColor,
                         titleColor: whiteColor)
                   ],

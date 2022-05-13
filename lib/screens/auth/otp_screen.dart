@@ -1,5 +1,6 @@
 import 'package:bharat_help_mission/base_widgets/expanded_flat_button.dart';
 import 'package:bharat_help_mission/common/helper_functions.dart';
+import 'package:bharat_help_mission/screens/home/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:pin_input_text_field/pin_input_text_field.dart';
@@ -85,7 +86,8 @@ class _OtpScreenState extends State<OtpScreen> {
                             ]))),
                     ExpandedFlatButton(
                         title: "Verify",
-                        onPressed: () {},
+                        onPressed: () =>
+                            gotoScreen(context, const DashboardScreen()),
                         buttonColor: primaryColor,
                         titleColor: whiteColor)
                   ],

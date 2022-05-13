@@ -9,34 +9,46 @@ class ExpandedTextField extends StatelessWidget {
   String prefixIcon;
   bool showPrefix;
   Color filledColor;
+  bool showBorder;
   ExpandedTextField(
       {Key? key,
       this.hint = '',
       this.prefixIcon = '',
       this.showPrefix = false,
       this.filledColor = whiteColor,
+      this.showBorder = false,
       this.controller})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      controller: controller,
-      decoration: InputDecoration(
-          fillColor: filledColor,
-          filled: true,
-          prefixIcon: showPrefix
-              ? IconButton(onPressed: null, icon: SvgPicture.asset(prefixIcon))
-              : const SizedBox(),
-          contentPadding:
-              const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-          hintText: hint,
-          border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide.none),
-          focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
-              borderSide: const BorderSide(color: primaryColor))),
+    return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(
+              color: showBorder
+                  ? blackColor.withOpacity(0.2)
+                  : Colors.transparent)),
+      child: TextField(
+        controller: controller,
+        decoration: InputDecoration(
+            fillColor: filledColor,
+            filled: true,
+            prefixIcon: showPrefix
+                ? IconButton(
+                    onPressed: null, icon: SvgPicture.asset(prefixIcon))
+                : const SizedBox(),
+            contentPadding:
+                const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+            hintText: hint,
+            hintStyle: Theme.of(context).textTheme.headline3,
+            border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide.none),
+            focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: const BorderSide(color: primaryColor))),
+      ),
     );
   }
 }

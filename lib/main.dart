@@ -23,6 +23,8 @@ class MyApp extends StatelessWidget {
                 fontSize: 18, fontWeight: FontWeight.w600, color: blackColor),
             headline3: TextStyle(
                 fontSize: 14, fontWeight: FontWeight.w400, color: blackColor),
+            headline4: TextStyle(
+                fontSize: 10, fontWeight: FontWeight.w500, color: blackColor),
           )),
       home: const OnBoardingScreen(),
     );
